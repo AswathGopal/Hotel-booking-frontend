@@ -1,8 +1,34 @@
-import { HotelSearchResponse, HotelType } from "../../backend/src/shared/types";
+// import { HotelSearchResponse, HotelType } from "../../backend/src/shared/types";
 import { RegisterFormData } from "./pages/Register";
 import { SignInFormData } from "./pages/SignIn";
 const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || "";
 
+export type HotelType ={
+  bookings: any;
+  _id:string;
+  userId:string;
+  name:string;
+  city:string;
+  country:string;
+  description:string;
+  type:string;
+  adultCount:number;
+  childCount:number;
+  facilities: string[];
+  pricePerNight: number;
+  starRating: number;
+  imageUrls: string[];
+  lastUpdated: Date;
+}
+
+export type HotelSearchResponse = {
+data: HotelType[];
+pagination: {
+  total: number;
+  page: number;
+  pages: number;
+}
+}
 export const register = async (formData: RegisterFormData) => {
   const response = await fetch(`${API_BASE_URL}/api/users/register`, {
     method: "POST",
