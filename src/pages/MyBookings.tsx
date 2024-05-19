@@ -1,5 +1,6 @@
 import { useQuery } from "react-query";
 import * as apiClient from '../api_client'
+import { ReactElement, JSXElementConstructor, ReactNode, ReactPortal } from "react";
 
 const MyBookings = () => {
   const { data: hotels } = useQuery(
@@ -28,7 +29,7 @@ const MyBookings = () => {
                 {hotel.city}, {hotel.country}
               </div>
             </div>
-            {hotel.bookings.map((booking) => (
+            {hotel.bookings.map((booking: { checkIn: string | number | Date; checkOut: string | number | Date; adultCount: string | number | boolean | ReactElement<any, string | JSXElementConstructor<any>> | Iterable<ReactNode> | ReactPortal | null | undefined; childCount: string | number | boolean | ReactElement<any, string | JSXElementConstructor<any>> | Iterable<ReactNode> | ReactPortal | null | undefined; }) => (
               <div>
                 <div>
                   <span className="font-bold mr-2">Dates: </span>

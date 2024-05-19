@@ -1,12 +1,13 @@
-import React, { useEffect } from "react";
+import  { useEffect } from "react";
 import { FormProvider, useForm } from "react-hook-form";
-import { HotelType } from "../../../backend/src/shared/types";
+// import { HotelType } from "../../../backend/src/shared/types";
 import DetailsSection from "./DetailsSection";
 import TypeSection from "./TypeSection";
 import FacilitiesSection from "./FacilitiesSection";
 import GuestSection from "./GuestSection";
 import ImagesSection from "./ImagesSection";
 export type HotelFormData = {
+  _id:string;
   name: string;
   city: string;
   country: string;
@@ -19,6 +20,23 @@ export type HotelFormData = {
   imageUrls: string[];
   adultCount: number;
   childCount: number;
+};
+
+export type HotelType ={
+  _id:string;
+  userId:string;
+  name:string;
+  city:string;
+  country:string;
+  description:string;
+  type:string;
+  adultCount:number;
+  childCount:number;
+  facilities: string[];
+  pricePerNight: number;
+  starRating: number;
+  imageUrls: string[];
+  lastUpdated: Date;
 };
 
 type Props = {

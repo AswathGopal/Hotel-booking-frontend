@@ -1,6 +1,21 @@
 import { Link } from "react-router-dom";
-import { HotelType } from "../../../backend/src/shared/types";
-
+// import { HotelType } from "../../../backend/src/shared/types";
+type HotelType ={
+  _id:string;
+  userId:string;
+  name:string;
+  city:string;
+  country:string;
+  description:string;
+  type:string;
+  adultCount:number;
+  childCount:number;
+  facilities: string[];
+  pricePerNight: number;
+  starRating: number;
+  imageUrls: string[];
+  lastUpdated: Date;
+}
 type Props = {
   hotel: HotelType;
 };
