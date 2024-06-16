@@ -1,5 +1,5 @@
 
-import ManageHotelForm from '../../forms/ManageHotelForm/ManageHotelForm';
+import ManageHotelForm from '../forms/ManageHotelForm/ManageHotelForm'
 import { useMutation, useQuery } from 'react-query';
 import { useAppContext } from '../context/AppContext';
 import { useParams } from 'react-router-dom';
